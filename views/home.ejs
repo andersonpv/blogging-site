@@ -2,9 +2,10 @@
 
 <h1>HOME</h1>
 <p><%= homeText %></p>
-<% for(var i= 0; i < composeArray.length; i++) { %>
-    <h1><%= composeArray[i].title; %></h1>
-    <p><%= composeArray[i].post; %></p>
-<%}%>
+
+<% composeArray.forEach(function(currentPost) { %>
+    <h1><%= currentPost.title; %></h1>
+    <p><%= currentPost.post; %></p>
+<% }) %> 
 
 <%- include('partials/footer') -%>
