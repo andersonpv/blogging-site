@@ -3,9 +3,14 @@
 <h1>HOME</h1>
 <p><%= homeText %></p>
 
+<!-- Display each post -->
 <% composeArray.forEach(function(currentPost) { %>
     <h1><%= currentPost.title; %></h1>
-    <p><%= currentPost.post; %></p>
+    <% if(currentPost.post.length > 100) { %>
+        <p><%= currentPost.post.substring(0, 100); %> ... <a href="/posts/<%= currentPost.title; %>">Read More</a></p>
+    <% } else {%>
+        <p><%= currentPost.post; %></p>
+    <% } %>
 <% }) %> 
 
 <%- include('partials/footer') -%>
